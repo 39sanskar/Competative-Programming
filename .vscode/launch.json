@@ -1,7 +1,6 @@
 {
   "version": "0.2.0",
   "configurations": [
-    
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -9,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Competative Programming/Week 2",
-      "program": "c:/Competative Programming/Week 2/build/Debug/outDebug",
+      "cwd": "c:/Competative Programming/Week 3",
+      "program": "c:/Competative Programming/Week 3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
