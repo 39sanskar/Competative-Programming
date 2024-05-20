@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Competative Programming/Week 3",
-      "program": "c:/Competative Programming/Week 3/build/Debug/outDebug",
+      "cwd": "c:/Competative Programming",
+      "program": "c:/Competative Programming/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
