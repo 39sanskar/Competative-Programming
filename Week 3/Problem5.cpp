@@ -1,48 +1,50 @@
-// Problem
-// Given 'n', print the symbol 'Z' spanning n rows using '*' symbol. Value of n>2 and n<=20.
+// Given a number N. Print the Fibonacci number of N.
 
-// Example:
-// 1) Input : n=3
-// Output:
-// ***
-//  *
-// ***
+// Note: In order to create the Fibonacci sequence use the following function:
 
-// 2) Input n=4
-// Output:
-// ****
-//   *
-//  *
-// ****
-// Sample Input
+// fib(1) = 0.
+// fib(2) = 1.
+// fib(n) = fib(n - 1) + fib(n - 2).
+// Input
+// Only one line containing a number N (1 ≤ N ≤ 50).
+
+// Output
+// Print the Fibonacci number of N.
+
+// Examples
+// inputCopy
+// 1
+// outputCopy
+// 0
+// inputCopy
 // 5
-// Sample Output
-// *****
-//    *
-//   *
-//  *
-// *****
-// Time Limit: 5
-// Memory Limit: 256
-// Source Limit:
-// Explanation
-// The 'Z' is printed across 5 lines as shown above.
+// outputCopy
+// 3
+// Note
+// For more information visit Fibonacci: https://www.mathsisfun.com/numbers/fibonacci-sequence.html.
 #include <iostream>
+#include <vector>
+
+long long fibonacci(int n) {
+    if (n == 1) return 0;
+    if (n == 2) return 1;
+    
+    std::vector<long long> fib(n + 1);
+    fib[1] = 0;
+    fib[2] = 1;
+    
+    for (int i = 3; i <= n; ++i) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    
+    return fib[n];
+}
 
 int main() {
     int n;
-    std::cout << "Enter the value of n: ";
     std::cin >> n;
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            std::cout << " ";
-        }
-        for (int j = 0; j < 2 * i + 1; j++) {
-            std::cout << "*";
-        }
-        std::cout << std::endl;
-    }
-
+    
+    std::cout << fibonacci(n) << std::endl;
+    
     return 0;
 }
