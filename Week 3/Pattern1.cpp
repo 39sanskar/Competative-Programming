@@ -11,7 +11,7 @@ int main(){
         {
             cout << "*";
         }
-        cout << endl;
+        cout << endl;// i have exauhasted the printing one row..
     }
     return 0;
 }
