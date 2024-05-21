@@ -13,10 +13,22 @@ using namespace std;
 
 // for the do-while loop is always contain the STATEMENT- 1 and the condition has STATEMENT- 2
 //and also need the semicolon at the end ;
-int main(){
-    int a[10] = { 1,1,1,1,2,2,2,3,3,4};
 
-    cout << a[1] << endl;
+
+// using for- each loop..
+
+
+int main(){
+    int n; cin >> n;
+    int a[n];
+
+    for (int i = 0; i < n; i++)
+    cin >> a[i];
+   // for-each loop i is not the index it is directly a value..
+   for(int i: a)
+   cout << i << endl;
+
+
 }
 
 
