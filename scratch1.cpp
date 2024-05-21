@@ -14,16 +14,11 @@ using namespace std;
 // for the do-while loop is always contain the STATEMENT- 1 and the condition has STATEMENT- 2
 //and also need the semicolon at the end ;
 int main(){
-    int n; cin >> n;
-    int i = 0;
+    int a[10] = { 1,1,1,1,2,2,2,3,3,4};
 
-    do{
-        cout << i << endl;
-        i++;
-    }while(i<n);
-
-
+    cout << a[1] << endl;
 }
+
 
 
 
