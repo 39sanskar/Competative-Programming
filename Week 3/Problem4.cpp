@@ -1,4 +1,5 @@
 // Given a number X. Determine if the number is prime or not
+// Given a number X. Determine if the number is prime or not
 
 // Note:
 
