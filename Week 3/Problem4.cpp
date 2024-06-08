@@ -28,6 +28,7 @@
 // NO
 // Note
 // First Example :
+// First Example:
 
 // 7 is prime because it is not divisible by 2,3,4,5,6, and only divisible by 1 and itself, so the answer is YES.
 
