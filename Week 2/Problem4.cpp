@@ -1,4 +1,5 @@
 // Given two person names.
+// Given two person names.
 
 // Each person has {"the first name" + "the second name"}
 
