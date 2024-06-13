@@ -11,8 +11,11 @@
 // that print 2 asterisk and space after that 
 // print 3 asterisk now stop as N is 3.
 // Example 2:
+// Example 2:
+// Example 3:
 
 // Input:
+//Input :
 // N = 5
 // Output:
 // * ** *** **** ***** 
