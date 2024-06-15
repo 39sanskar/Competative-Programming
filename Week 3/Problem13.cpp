@@ -12,6 +12,7 @@
 // print 3 asterisk now stop as N is 3.
 // Example 2:
 
+
 // Input:
 // N = 5
 // Output:
