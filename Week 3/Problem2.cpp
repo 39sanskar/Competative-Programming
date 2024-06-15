@@ -4,7 +4,7 @@
 // If at least one of these n
 //  people has answered that the problem is hard, the coordinator decides to change the problem. For the given responses, check if the problem is easy enough.
 
-// Input
+
 // Input 
 // The first line contains a single integer n
 //  (1≤n≤100
