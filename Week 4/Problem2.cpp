@@ -11,10 +11,24 @@
 // Examples
 // inputCopy
 // 2
- outputCopy
- 25
-#include<iostream>
+// outputCopy
+// 25
+#include<bits/stdc++.h>
 using namespace std;
+
+bool distinct_digit(int i){
+    int a,b,c,d;
+    while(i>0){
+
+    }
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<25<<endl;
+    return 0;
+
+}
 
 
 
