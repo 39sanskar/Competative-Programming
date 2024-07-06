@@ -58,7 +58,6 @@
 // In the second example, the answer is NO because it's not possible to find 7 prime numbers from 2 to 45 that satisfy the Trio Prime Sum property.
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 // Function to perform Sieve of Eratosthenes and find all primes up to n
@@ -84,24 +83,22 @@ int main() {
     // Find all prime numbers up to n using Sieve of Eratosthenes
     vector<bool> is_prime = sieve(n);
     
-    // Generate consecutive prime pairs (p1, p2)
-    vector<pair<int, int>> prime_pairs;
-    for (int i = 2; i <= n - 2; ++i) {
-        if (is_prime[i] && is_prime[i + 2]) {
-            prime_pairs.push_back({i, i + 2});
+    // Generate all prime numbers up to n
+    vector<int> primes;
+    for (int i = 2; i <= n; ++i) {
+        if (is_prime[i]) {
+            primes.push_back(i);
         }
     }
     
     // Count numbers that can be expressed as p = p1 + p2 + 1
     int count = 0;
-    for (int p = 5; p <= n; ++p) {
-        for (auto pair : prime_pairs) {
-            int p1 = pair.first;
-            int p2 = pair.second;
-            if (p == p1 + p2 + 1) {
-                count++;
-                break;
-            }
+    for (int i = 0; i < primes.size() - 1; ++i) {
+        int p1 = primes[i];
+        int p2 = primes[i + 1];
+        int candidate = p1 + p2 + 1;
+        if (candidate <= n && is_prime[candidate]) {
+            count++;
         }
     }
     
