@@ -186,19 +186,7 @@ int main() {
 #include <algorithm>
 using namespace std;
 
-// Function to calculate the amount of special flooring needed to achieve height h
-long long requiredFlooring(const vector<int>& heights, int h) {
-    long long total = 0;
-    for (int height : heights) {
-        if (height < h) {
-            total += h - height;
-        }
-    }
-    return total;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
+/
     cin.tie(0);
     
     int t;
