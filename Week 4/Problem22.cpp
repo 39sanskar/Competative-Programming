@@ -105,7 +105,16 @@
 // Sample Output 3
 // Copy
 // 6
+include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
+/
+    cin.tie(0);
+    
+    int t;
+    cin >> t;
 
 
 
