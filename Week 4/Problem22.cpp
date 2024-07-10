@@ -1,5 +1,5 @@
 // B. Tiles Game Again
-// time limit per test1 s.
+// time limit per test  1s.
 // memory limit per test256 MB
 // inputstandard input
 // outputstandard output
