@@ -296,6 +296,64 @@
 // Sample Output 4
 // Copy
 // Yes
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Function to rotate grid A vertically
+vector<string> verticalShift(const vector<string>& A, int shift) {
+    int H = A.size();
+    int W = A[0].size();
+    vector<string> result(H, string(W, ' '));
+    for (int i = 0; i < H; ++i) {
+        result[(i + shift) % H] = A[i];
+    }
+    return result;
+}
+
+// Function to rotate grid A horizontally
+vector<string> horizontalShift(const vector<string>& A, int shift) {
+    int H = A.size();
+    int W = A[0].size();
+    vector<string> result(H, string(W, ' '));
+    for (int i = 0; i < H; ++i) {
+        for (int j = 0; j < W; ++j) {
+            result[i][(j + shift) % W] = A[i][j];
+    }
+    }
+    return result;
+}
+
+int main() {
+    int H, W;
+    cin >> H >> W;
+    vector<string> A(H), B(H);
+
+    for (int i = 0; i < H; ++i) {
+        cin >> A[i];
+    }
+    for (int i = 0; i < H; ++i) {
+        cin >> B[i];
+    }
+
+    // Try all possible vertical and horizontal shifts
+    for (int s = 0; s < H; ++s) {
+        for (int t = 0; t < W; ++t) {
+            // Apply vertical shift s and horizontal shift t
+            vector<string> shiftedA = verticalShift(A, s);
+            shiftedA = horizontalShift(shiftedA, t);
+
+            // Check if shifted A equals B
+            if (shiftedA == B) {
+                cout << "Yes" << endl;
+                return 0;
+            }
+        }
+    }
+
+    cout << "No" << endl;
+    return 0;
+}
 
 
 
