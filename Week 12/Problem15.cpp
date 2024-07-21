@@ -30,5 +30,47 @@
 // In the second sample test there are the following occurrences of the substrings: BACFAB.
 
 // In the third sample test there is no substring "AB" nor substring "BA".
+#include <iostream>
+#include <string>
+using namespace std;
 
+void solve() {
+    string s;
+    cin >> s;
 
+    bool foundAB = false;
+    bool foundBA = false;
+
+    // Check for "AB" followed by "BA"
+    for (int i = 0; i < s.length() - 1; ++i) {
+        if (!foundAB && s[i] == 'A' && s[i + 1] == 'B') {
+            foundAB = true;
+            i++; // Skip the next character to avoid overlap
+        } else if (foundAB && s[i] == 'B' && s[i + 1] == 'A') {
+            cout << "YES" << endl;
+            return;
+        }
+    }
+
+    // Reset the flags and check for "BA" followed by "AB"
+    foundAB = false;
+
+    for (int i = 0; i < s.length() - 1; ++i) {
+        if (!foundBA && s[i] == 'B' && s[i + 1] == 'A') {
+            foundBA = true;
+            i++; // Skip the next character to avoid overlap
+        } else if (foundBA && s[i] == 'A' && s[i + 1] == 'B') {
+            cout << "YES" << endl;
+            return;
+        }
+    }
+
+    cout << "NO" << endl;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    solve();
+    return 0;
+}
