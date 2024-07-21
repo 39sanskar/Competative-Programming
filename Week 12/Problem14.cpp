@@ -38,3 +38,29 @@
 
 // In the second example Mishka can put box 2 into box 3, and box 4 into box 1.
 
+#include<iostream>
+#include<map>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(int i=0; i<n; i++)
+    cin >> a[i];
+    
+    map<int , int> cnt;
+    for(int i=0; i < n; i++)
+    {
+        int[a[i]]++;
+
+    }
+    int ans = 0;
+    for(auto it : cnt)
+    {
+        cnt freq = it.second;
+        ans = max(ans , freq);
+    }
+    cout << ans << "\n";
+    return 0;
+}
