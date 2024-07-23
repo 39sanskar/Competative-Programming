@@ -106,6 +106,64 @@
 // Among others, x=[1,3,2,0]
 // , x=[−5,−3,−6,−4]
 //  are also correct answers for the first example.
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Building {
+    int visits;
+    int index;
+};
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    
+    while (t--) {
+        int n;
+        cin >> n;
+        
+        vector<Building> buildings(n);
+        for (int i = 0; i < n; ++i) {
+            cin >> buildings[i].visits;
+            buildings[i].index = i;
+        }
+        
+        // Sort buildings based on the number of visits in descending order
+        sort(buildings.begin(), buildings.end(), [](const Building &a, const Building &b) {
+            return a.visits > b.visits;
+        });
+        
+        vector<int> coordinates(n + 1, 0);
+        long long total_time = 0;
+        int pos = 1; // Positive positions
+        int neg = -1; // Negative positions
+        
+        for (int i = 0; i < n; ++i) {
+            if (i % 2 == 0) {
+                coordinates[buildings[i].index + 1] = pos;
+                total_time += 2LL * pos * buildings[i].visits;
+                pos++;
+            } else {
+                coordinates[buildings[i].index + 1] = neg;
+                total_time += 2LL * (-neg) * buildings[i].visits;
+                neg--;
+            }
+        }
+        
+        cout << total_time << "\n";
+        for (int i = 0; i <= n; ++i) {
+            cout << coordinates[i] << " ";
+        }
+        cout << "\n";
+    }
+    
+    return 0;
+}
 
 
 
