@@ -57,5 +57,64 @@
 
 // In the last case, the area is 342−332=67
 // .
+#include<iostream>
+using namespace std;
+
+void io() {
+#ifndef ONLINE_JUDGE
+    freopen("in.text", "r", stdin);
+    freopen("out.text", "w", stdout);
+    freopen("err.text", "w", stderr);
+#endif
+}
+using ll = long long ;
+
+bool isPrime(ll x)
+{
+    if(x == 1) return false;
+    for(ll d = 2; d*d <= x; d++)
+    {
+        if(x % d == 0) return false;
+    }
+    return true;
+}
+
+void solve()
+{
+    ll  a , b;
+    cin >> a >> b;
+
+    if((a-b == 1) && (isPrime(a + b))) 
+    cout << "YES\n";
+    else cout << "NO\n";
+}
+int main() {
+    io();
+
+    int t;
+    cin >> t;
+
+    for (int i = 0; i < t; ++i) {
+        solve();
+    }
+
+    return 0;
+}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
