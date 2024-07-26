@@ -24,4 +24,59 @@
 // NO
 // Note
 // In the first sample the answer is YES since at least two numbers can be expressed as it was described (for example, 13 and 19). In the second sample the answer is NO since it is impossible to express 7 prime numbers from 2 to 45 in the desired form.
+#include <iostream>
+#include <vector>
+#include <unordered_set>
 
+using namespace std;
+
+// Function to generate prime numbers up to n using Sieve of Eratosthenes
+vector<int> generatePrimes(int n) {
+    vector<bool> isPrime(n + 1, true);
+    isPrime[0] = false; // 0 is not a prime
+    isPrime[1] = true;  // Including 1 as not a prime number
+    for (int i = 2; i * i <= n; ++i) {
+        if (isPrime[i]) {
+            for (int j = i * i; j <= n; j += i) {
+                isPrime[j] = false;
+            }
+        }
+    }
+    vector<int> primes;
+    for (int i = 1; i <= n; ++i) { // Start from 1 to include it as prime
+        if (isPrime[i]) {
+            primes.push_back(i);
+        }
+    }
+    return primes;
+}
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    
+    // Generate all prime numbers up to n
+    vector<int> primes = generatePrimes(n);
+    // Use an unordered_set for fast lookup
+    unordered_set<int> primeSet(primes.begin(), primes.end());
+    
+    int count = 0;
+    
+    // Check for each pair of neighboring primes
+    for (size_t i = 0; i < primes.size() - 1; ++i) {
+        int candidate = primes[i] + primes[i + 1] + 1;
+        // Check if the candidate is a prime number and within the range
+        if (candidate <= n && primeSet.find(candidate) != primeSet.end()) {
+            ++count;
+        }
+    }
+    
+    // Output the result based on the count of valid primes
+    if (count >= k) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+    
+    return 0;
+}
