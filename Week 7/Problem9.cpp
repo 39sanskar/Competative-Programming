@@ -58,17 +58,25 @@
 // buy four bottles of Ber-Cola and don't buy Bars bars;
 // don't buy Ber-Cola and buy 10 Bars bars.
 // In third example it's impossible to but Ber-Cola and Bars bars in order to spend exactly n burles.
+#include <iostream>
+using namespace std;
+typedef long long ll;
 
+int main() {
+    ll n, a, b;
+    cin >> n >> a >> b;
+    ll X = -1, Y;
 
-
-
-
-
-
-
-
-
-
-
-
-
+    for (Y = 0; Y * b <= n; Y++) {
+        if ((n - Y * b) % a == 0  && (n- Y * b) >= 0) {
+            X = (n - Y * b) / a;
+            break;
+        }
+    }
+    if (X == -1) {
+        cout << "NO\n";
+    } else {
+        cout << "YES\n" << X << ' ' << Y << '\n';
+    }
+    return 0;
+}
