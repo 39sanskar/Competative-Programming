@@ -55,5 +55,3 @@
 // In the third test case, 29+43+1=73
 //  and gcd(29,43)=1
 // .
-
-
