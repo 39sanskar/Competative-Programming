@@ -26,7 +26,19 @@
 // 3 5
 // 2 4
 // Note
+//#
 // The first query is $$$P=17$$$. $$$a=3$$$ and $$$b=5$$$ are valid bases in this case, because $$$17 \bmod 3 = 17 \bmod 5 = 2$$$. There are other pairs which work as well.
-
 // In the second query, with $$$P=5$$$, the only solution is $$$a=2$$$ and $$$b=4$$$.
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
 
+    int t;
+    cin >> t;
+    while(t--){
+        int p;
+        cin >> p;
+        cout << 2 <<" "<<p-1<<endl;
+
+    }
+}
