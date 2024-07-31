@@ -47,5 +47,42 @@
 // . The sums aren't equal.
 
 // In the second example, there's no solution.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int size = 2 * n; // the size of the array is 2 * n
+    vector<int> v(size);
+    for(int i = 0; i < size; i++)
+        cin >> v[i]; // taking input
+
+    sort(v.begin(), v.end()); // sort the array
+
+    long long firstN = 0; // sum of first n elements
+    long long lastN = 0; // sum of last n elements
+
+    for(int i = 0; i < n; i++)
+        firstN += v[i];
+    // calculate sum of first n elements
+
+    for(int i = n; i < size; i++)
+        lastN += v[i];
+    // calculate sum of last n elements
+
+    if(firstN != lastN) { // if not equal, print array
+        for(int i = 0; i < size; i++)
+            cout << v[i] << " ";
+        cout << endl;
+    } else {
+        cout << -1 << endl; // else print -1
+    }
+
+    return 0;
+}
+
+// TC - O(nlogn + n) ~ nlogn
+// SC - O(1)
 
 
