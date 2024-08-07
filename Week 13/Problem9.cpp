@@ -9,7 +9,7 @@ using namespace std;
     cout.precision(numeric_limits<double>::max_digits10);
  
  
-void CoderAbhi27()
+void CoderAman()
 {
     int n;
     cin >> n;
@@ -31,7 +31,7 @@ int32_t main()
     cin >> t;
     while (t--)
     {
-        CoderAbhi27();
+        CoderAman();
     }
     return 0;
 }
