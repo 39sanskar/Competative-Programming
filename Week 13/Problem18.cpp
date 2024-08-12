@@ -38,7 +38,7 @@ int32_t main()
     cin >> t;
     while (t--)
     {
-        CoderSabskar();
+        CoderSanskar();
     }
     return 0;
 }
