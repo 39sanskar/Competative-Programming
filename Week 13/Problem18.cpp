@@ -2,10 +2,10 @@
  
 using namespace std;
  
-#define fastIO                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(NULL);               \
-    cout.tie(NULL);              \
+#define fastIO                   
+    ios::sync_with_stdio(false); 
+    cin.tie(NULL);               
+    cout.tie(NULL);              
     cout.precision(numeric_limits<double>::max_digits10);
  
  
